@@ -81,23 +81,23 @@ const Galeria = () => {
       {habilidades.map(habilidad => (
         <div className="foto-tarjeta" key={habilidad.name}> {/* Usamos habilidad.name como key ya que es único en la lista devuelta */}
           {/* Contenedor para la imagen con un fondo y altura mínima */}
-          <div className="foto-imagen-contenedor" style={{ background: '#f0f0f0', minHeight: '170px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            {/* 
-              La imagen se carga desde picsum.photos, usando el 'id' de la foto como "seed"
-              para obtener una imagen única pero consistente para ese ID.
-              Dimensiones: 300x200.
-            */}
-            <img
-              className="foto-imagen"
-              src={`https://via.placeholder.com/200x150/E0E0E0/757575?text=${encodeURIComponent(habilidad.name)}`}
-              alt={habilidad.name} // Texto alternativo para accesibilidad y SEO.
-              // Manejador de error para la imagen: si no se puede cargar la imagen de picsum,
-              // se intenta cargar una imagen de gatito de placekitten.com.
-              onError={e => {
-                e.target.onerror = null; // Evita bucles de error si la imagen de fallback también falla.
-                e.target.src = `https://via.placeholder.com/200x150/FF0000/FFFFFF?text=Error`; // Fallback si el placeholder falla
-              }}
-            />
+          <div 
+            className="foto-imagen-contenedor" 
+            style={{ 
+              background: '#E0E0E0', 
+              minHeight: '170px', 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'center',
+              padding: '10px',
+              textAlign: 'center',
+              color: '#333',
+              fontSize: '14px',
+              fontWeight: 'bold',
+              wordBreak: 'break-word'
+            }}
+          >
+            {habilidad.name.replace(/-/g, ' ')}
           </div>
           {/* Mostramos el título de la foto debajo de la imagen. */}
           <div className="foto-titulo" style={{ textTransform: 'capitalize' }}>{habilidad.name.replace('-', ' ')}</div>
