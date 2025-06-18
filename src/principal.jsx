@@ -25,12 +25,5 @@ const root = ReactDOM.createRoot(rootElement);
 // Usamos el método render de la raíz para renderizar nuestro componente Aplicacion.
 // Esto le dice a React que maneje el contenido del 'rootElement' en el DOM.
 root.render(
-  // <React.StrictMode> es una herramienta para destacar problemas potenciales en la aplicación.
-  // Activa chequeos y advertencias adicionales para sus descendientes (en este caso, <Aplicacion />).
-  // No renderiza ninguna UI visible y solo se ejecuta en modo de desarrollo, no afecta el build de producción.
-  // Ayuda a encontrar componentes con efectos secundarios inseguros, uso de APIs legadas, etc.
-  <React.StrictMode>
-    {/* Renderizamos el componente Aplicacion. Este es el punto de partida de la interfaz de usuario de nuestra aplicación. */}
-    <Aplicacion />
-  </React.StrictMode>
+  <Aplicacion />
 );
